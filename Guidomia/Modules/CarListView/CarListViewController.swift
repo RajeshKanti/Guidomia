@@ -47,10 +47,13 @@ class CarListViewController: UIViewController, CarListDisplayLogic {
     }
 
     private func setupSubview() {
+        carsTableView.contentInset = UIEdgeInsets(top: -22, left: 0, bottom: 0, right: 0);
         carsTableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "HeaderTableViewCell")
         carsTableView.register(UINib(nibName: "CarTableViewCell", bundle: nil), forCellReuseIdentifier: "CarTableViewCell")
 
+        carsTableView.sectionHeaderHeight = UITableView.automaticDimension
         carsTableView.rowHeight = UITableView.automaticDimension
+        carsTableView.estimatedSectionHeaderHeight = 50.0
         carsTableView.estimatedRowHeight = 50.0
     }
 
@@ -79,6 +82,7 @@ class CarListViewController: UIViewController, CarListDisplayLogic {
     }
 }
 
+// MARK: - Tableview Data Source and Delegate methods
 extension CarListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
