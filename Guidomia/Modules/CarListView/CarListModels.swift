@@ -26,7 +26,6 @@ enum CarList {
     }
 }
 
-
 struct CarModel: Codable {
     let make: String
     let model: String

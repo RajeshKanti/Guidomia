@@ -9,8 +9,18 @@ import UIKit
 
 class HeaderTableViewCell: UITableViewHeaderFooterView {
     
-    @IBOutlet weak var carMakeSearchBar: UISearchBar!
-    @IBOutlet weak var carModelSearchBar: UISearchBar!
+    @IBOutlet weak var carMakeSearchBar: UISearchBar! {
+        didSet {
+            carMakeSearchBar.setImage(UIImage(), for: .search, state: .normal)
+            carMakeSearchBar.searchTextField.backgroundColor = .white
+        }
+    }
+    @IBOutlet weak var carModelSearchBar: UISearchBar! {
+        didSet {
+            carModelSearchBar.setImage(UIImage(), for: .search, state: .normal)
+            carModelSearchBar.searchTextField.backgroundColor = .white
+        }
+    }
     @IBOutlet weak var filterContainerView: UIView! {
         didSet {
             filterContainerView.layer.cornerRadius = 10.0
