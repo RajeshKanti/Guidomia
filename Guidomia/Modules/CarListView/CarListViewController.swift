@@ -69,24 +69,23 @@ class CarListViewController: UIViewController, CarListDisplayLogic {
     // MARK: - Use Cases
     
     func loadScene() {
-        interactor?.loadScene()
+        let request = CarList.LoadScene.Request(searchedMakeName: nil, searchedModelName: nil)
+        interactor?.loadScene(request)
     }
     
     func displayLoadScene(_ viewModel: CarList.LoadScene.ViewModel) {
         cellData = viewModel.carList
         carsTableView.reloadData()
     }
-
 }
 
 extension CarListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderTableViewCell") as? HeaderTableViewCell
-      headerCell?.setupCell(carMakeCompletionHandler: { carMakeSearchKey in
-            print(carMakeSearchKey)
-        }, carModelCompletionHanlder: { carModelSearchKey in
-            print(carModelSearchKey)
+        headerCell?.setupCell(carSearchCompletionHanlder: { [weak self] carMakeSearchKey, carModelSearchKey in
+            let request = CarList.LoadScene.Request(searchedMakeName: carMakeSearchKey, searchedModelName: carModelSearchKey)
+            self?.interactor?.loadScene(request)
         })
         return headerCell
     }

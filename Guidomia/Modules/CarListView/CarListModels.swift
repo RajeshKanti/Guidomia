@@ -11,9 +11,12 @@ enum CarList {
     
     enum LoadScene {
         
-        struct Response {
+        struct Request {
             let searchedMakeName: String?
             let searchedModelName: String?
+        }
+        
+        struct Response {
             let carList: [CarModel]
         }
         

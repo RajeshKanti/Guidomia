@@ -17,13 +17,10 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
         }
     }
     
-    var carMakeCompletion: ((String) -> Void)?
-    var carModelCompletion: ((String) -> Void)?
-
-    func setupCell(carMakeCompletionHandler: @escaping ((String) -> Void), carModelCompletionHanlder: @escaping (String) -> Void) {
-        
-        carMakeCompletion = carMakeCompletionHandler
-        carModelCompletion = carModelCompletionHanlder
+    var carSearchCompleHandler: ((String?, String?) -> Void)?
+    
+    func setupCell(carSearchCompletionHanlder: @escaping ((String?, String?) -> Void)) {
+        carSearchCompleHandler = carSearchCompletionHanlder
     }
 }
 
@@ -32,11 +29,11 @@ extension HeaderTableViewCell: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if searchBar == carMakeSearchBar {
-            let newSearchedString = NSString(string: searchBar.text!).replacingCharacters(in: range, with: text)
-            carMakeCompletion?(newSearchedString)
+            let carMakeSearchString = NSString(string: searchBar.text!).replacingCharacters(in: range, with: text)
+            carSearchCompleHandler?(carMakeSearchString, carModelSearchBar.text)
         } else if searchBar == carModelSearchBar {
-            let newSearchedString = NSString(string: searchBar.text!).replacingCharacters(in: range, with: text)
-            carModelCompletion?(newSearchedString)
+            let carModelSearchString = NSString(string: searchBar.text!).replacingCharacters(in: range, with: text)
+            carSearchCompleHandler?(carMakeSearchBar.text, carModelSearchString)
         }
         
         return true
