@@ -22,10 +22,11 @@ class CarListPresenter:  CarListPresentationLogic {
         for car in response.carList {
             let prosTitle = car.prosList.count > 0 ? "Pros :" : ""
             let consTitle = car.consList.count > 0 ? "Cons :" : ""
+            let carPrice = "Price : \(car.customerPrice / 1000)k"
             let prosAttributedText = getBulletAttributedText(dataArray: car.prosList)
             let consAttributedText = getBulletAttributedText(dataArray: car.consList)
             
-            let carCellVM = CarCellModel(image: UIImage(named: "\(car.model)") ?? UIImage(), name: car.model, price: "\(car.marketPrice)", starCount: car.rating, prosTitle: prosTitle, consTitle: consTitle, prosAttributedStr: prosAttributedText, consAttributedStr: consAttributedText)
+            let carCellVM = CarCellModel(image: UIImage(named: "\(car.model)") ?? UIImage(), name: car.model, price: carPrice, starCount: car.rating, prosTitle: prosTitle, consTitle: consTitle, prosAttributedStr: prosAttributedText, consAttributedStr: consAttributedText)
             carListCellModels.append(carCellVM)
         }
         let viewModel = CarList.LoadScene.ViewModel(carList: carListCellModels)
