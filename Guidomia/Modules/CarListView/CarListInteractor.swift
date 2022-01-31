@@ -18,18 +18,39 @@ protocol CarListDataStore {
 class CarListInteracter: CarListBusinessLogic, CarListDataStore {
     var presenter: CarListPresentationLogic?
     private var carList: [CarModel] = []
+    private var coreDataManager = CoreDataManager()
     
     func loadScene(_ request: CarList.LoadScene.Request) {
         
-        let serviceManager = ServiceManager()
-        serviceManager.fetchCarList { [weak self] result in
-            
-            switch result {
-            case .success(let carList):
-                self?.carList = carList
-                self?.filterCarList(request, carList: self?.carList ?? [CarModel]())                                
-            case .failure(let error):
-                debugPrint(error.localizedDescription)
+        //Fetch from cached data from Core Data
+        if let carsManagedObj = coreDataManager.fetchCarInfosFromCoreData(), carsManagedObj.count > 0 {
+            carList.removeAll()
+            for car in carsManagedObj {
+                if let carMake = car.value(forKeyPath: "make") as? String,
+                let carModel = car.value(forKeyPath: "model") as? String,
+                let customerPrice = car.value(forKeyPath: "customerPrice") as? Int,
+                let marketPrice = car.value(forKeyPath: "marketPrice") as? Int,
+                let rating = car.value(forKeyPath: "rating") as? Int,
+                let prosList = car.value(forKeyPath: "prosList") as? [String],
+                let consList = car.value(forKeyPath: "consList") as? [String] {
+                    let carObj = CarModel(make: carMake, model: carModel, customerPrice: customerPrice, marketPrice: marketPrice, rating: rating, prosList: prosList, consList: consList)
+                    carList.append(carObj)
+                }
+            }
+            filterCarList(request, carList: carList)
+        } else {
+            //Fetch from local json file
+            let serviceManager = ServiceManager()
+            serviceManager.fetchCarList { [weak self] result in
+                
+                switch result {
+                case .success(let carList):
+                    self?.carList = carList
+                    coreDataManager.saveCarInfosToData(carList: self?.carList ?? [CarModel]())
+                    self?.filterCarList(request, carList: self?.carList ?? [CarModel]())
+                case .failure(let error):
+                    debugPrint(error.localizedDescription)
+                }
             }
         }
     }
