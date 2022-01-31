@@ -12,19 +12,21 @@ protocol CarListBusinessLogic {
 }
 
 protocol CarListDataStore {
-    
+    var carList: [CarModel]? { get set }
 }
 
 class CarListInteracter: CarListBusinessLogic, CarListDataStore {
+    var carList: [CarModel]?
+    
     var presenter: CarListPresentationLogic?
-    private var carList: [CarModel] = []
     private var coreDataManager = CoreDataManager()
     
     func loadScene(_ request: CarList.LoadScene.Request) {
-        
+        carList?.removeAll()
+        carList = [CarModel]()
+
         //Fetch from cached data from Core Data
         if let carsManagedObj = coreDataManager.fetchCarInfosFromCoreData(), carsManagedObj.count > 0 {
-            carList.removeAll()
             for car in carsManagedObj {
                 if let carMake = car.value(forKeyPath: "make") as? String,
                 let carModel = car.value(forKeyPath: "model") as? String,
@@ -34,10 +36,10 @@ class CarListInteracter: CarListBusinessLogic, CarListDataStore {
                 let prosList = car.value(forKeyPath: "prosList") as? [String],
                 let consList = car.value(forKeyPath: "consList") as? [String] {
                     let carObj = CarModel(make: carMake, model: carModel, customerPrice: customerPrice, marketPrice: marketPrice, rating: rating, prosList: prosList, consList: consList)
-                    carList.append(carObj)
+                    carList?.append(carObj)
                 }
             }
-            filterCarList(request, carList: carList)
+            filterCarList(request, carList: carList ?? [CarModel]())
         } else {
             //Fetch from local json file
             let serviceManager = ServiceManager()

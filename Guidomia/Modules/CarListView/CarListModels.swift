@@ -10,16 +10,13 @@ import Foundation
 enum CarList {
     
     enum LoadScene {
-        
         struct Request {
             let searchedMakeName: String?
             let searchedModelName: String?
         }
-        
         struct Response {
             let carList: [CarModel]
         }
-        
         struct ViewModel {
             let carList: [CarCellModel]
         }

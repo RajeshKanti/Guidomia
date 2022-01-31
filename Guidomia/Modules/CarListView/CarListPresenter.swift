@@ -50,5 +50,4 @@ class CarListPresenter:  CarListPresentationLogic {
         }
         return text
     }
-    
 }
