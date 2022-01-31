@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GUIDOMIA-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="CarListViewController" customModule="Guidomia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UU-sc-SfC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUIDOMIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjJ-Dy-Yfn">
+                                        <rect key="frame" x="20" y="9" width="93" height="26"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu-icon" translatesAutoresizingMaskIntoConstraints="NO" id="eXD-0v-LwE">
+                                        <rect key="frame" x="384" y="12" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ESf-RP-aFu"/>
+                                            <constraint firstAttribute="width" constant="20" id="Fvu-th-4Pv"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="Orange"/>
+                                <constraints>
+                                    <constraint firstItem="eXD-0v-LwE" firstAttribute="centerY" secondItem="6UU-sc-SfC" secondAttribute="centerY" id="7FP-AF-k4c"/>
+                                    <constraint firstAttribute="trailing" secondItem="eXD-0v-LwE" secondAttribute="trailing" constant="10" id="7gN-QC-E6h"/>
+                                    <constraint firstItem="FjJ-Dy-Yfn" firstAttribute="leading" secondItem="6UU-sc-SfC" secondAttribute="leading" constant="20" id="P2T-f2-HyG"/>
+                                    <constraint firstItem="FjJ-Dy-Yfn" firstAttribute="centerY" secondItem="6UU-sc-SfC" secondAttribute="centerY" id="RJ8-OT-mIz"/>
+                                    <constraint firstAttribute="height" constant="44" id="bUh-q8-AB3"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mCH-jv-chS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2md-nC-38w"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xCH-WA-sDn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="Orange"/>
+                        <constraints>
+                            <constraint firstItem="6UU-sc-SfC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="B9r-K2-nDZ"/>
+                            <constraint firstItem="6UU-sc-SfC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wmv-8u-fTa"/>
+                            <constraint firstItem="mCH-jv-chS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZJO-rp-nVN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mCH-jv-chS" secondAttribute="trailing" id="asa-ku-cKM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6UU-sc-SfC" secondAttribute="trailing" id="i8K-fP-ErF"/>
+                            <constraint firstAttribute="bottom" secondItem="mCH-jv-chS" secondAttribute="bottom" id="ra4-yl-s05"/>
+                            <constraint firstItem="mCH-jv-chS" firstAttribute="top" secondItem="6UU-sc-SfC" secondAttribute="bottom" id="xFL-VE-9YW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="GUIDOMIA" id="HPa-76-F6Q"/>
+                    <connections>
+                        <outlet property="carsTableView" destination="mCH-jv-chS" id="ts4-SF-cmh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.8840579710145" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Menu-icon" width="50" height="50"/>
+        <namedColor name="Orange">
+            <color red="0.98799997568130493" green="0.37599998712539673" blue="0.086000002920627594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

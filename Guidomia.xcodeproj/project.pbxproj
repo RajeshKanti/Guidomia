@@ -7,16 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10CE8AF27A75D0C00F1E74B /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10CE8AE27A75D0C00F1E74B /* CoreData.swift */; };
+		F10CE8B327A7739000F1E74B /* Guidomia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F10CE8AB27A75A4E00F1E74B /* Guidomia.xcdatamodeld */; };
 		F140B39927A2282D00D373B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B39827A2282D00D373B1 /* AppDelegate.swift */; };
 		F140B39B27A2282D00D373B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B39A27A2282D00D373B1 /* SceneDelegate.swift */; };
-		F140B39D27A2282D00D373B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B39C27A2282D00D373B1 /* ViewController.swift */; };
+		F140B39D27A2282D00D373B1 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B39C27A2282D00D373B1 /* CarListViewController.swift */; };
 		F140B3A027A2282D00D373B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F140B39E27A2282D00D373B1 /* Main.storyboard */; };
-		F140B3A327A2282D00D373B1 /* Guidomia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F140B3A127A2282D00D373B1 /* Guidomia.xcdatamodeld */; };
 		F140B3A527A2282F00D373B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F140B3A427A2282F00D373B1 /* Assets.xcassets */; };
 		F140B3A827A2282F00D373B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F140B3A627A2282F00D373B1 /* LaunchScreen.storyboard */; };
 		F140B3B327A2282F00D373B1 /* GuidomiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3B227A2282F00D373B1 /* GuidomiaTests.swift */; };
 		F140B3BD27A2282F00D373B1 /* GuidomiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3BC27A2282F00D373B1 /* GuidomiaUITests.swift */; };
 		F140B3BF27A2282F00D373B1 /* GuidomiaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3BE27A2282F00D373B1 /* GuidomiaUITestsLaunchTests.swift */; };
+		F140B3CC27A2299C00D373B1 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F140B3CB27A2299C00D373B1 /* ColorAssets.xcassets */; };
+		F140B3D427A232F400D373B1 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3D227A232F400D373B1 /* CarTableViewCell.swift */; };
+		F140B3D527A232F400D373B1 /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F140B3D327A232F400D373B1 /* CarTableViewCell.xib */; };
+		F140B3DF27A2C74B00D373B1 /* CarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3DE27A2C74B00D373B1 /* CarListInteractor.swift */; };
+		F140B3E127A2C75F00D373B1 /* CarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3E027A2C75F00D373B1 /* CarListPresenter.swift */; };
+		F140B3E327A2C77200D373B1 /* CarListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3E227A2C77200D373B1 /* CarListRouter.swift */; };
+		F140B3E527A2C78500D373B1 /* CarListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3E427A2C78500D373B1 /* CarListModels.swift */; };
+		F140B3E827A4273900D373B1 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = F140B3E727A4273900D373B1 /* car_list.json */; };
+		F140B3EB27A427D000D373B1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3EA27A427D000D373B1 /* ServiceManager.swift */; };
+		F140B3EF27A631DF00D373B1 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140B3EE27A631DE00D373B1 /* HeaderTableViewCell.swift */; };
+		F140B3F127A631E900D373B1 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F140B3F027A631E900D373B1 /* HeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F10CE8AC27A75A4E00F1E74B /* Guidomia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guidomia.xcdatamodel; sourceTree = "<group>"; };
+		F10CE8AE27A75D0C00F1E74B /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		F140B39527A2282D00D373B1 /* Guidomia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guidomia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F140B39827A2282D00D373B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F140B39A27A2282D00D373B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F140B39C27A2282D00D373B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F140B39C27A2282D00D373B1 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
 		F140B39F27A2282D00D373B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F140B3A227A2282D00D373B1 /* Guidomia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guidomia.xcdatamodel; sourceTree = "<group>"; };
 		F140B3A427A2282F00D373B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F140B3A727A2282F00D373B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F140B3A927A2282F00D373B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +64,17 @@
 		F140B3B827A2282F00D373B1 /* GuidomiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F140B3BC27A2282F00D373B1 /* GuidomiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITests.swift; sourceTree = "<group>"; };
 		F140B3BE27A2282F00D373B1 /* GuidomiaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F140B3CB27A2299C00D373B1 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		F140B3D227A232F400D373B1 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		F140B3D327A232F400D373B1 /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
+		F140B3DE27A2C74B00D373B1 /* CarListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListInteractor.swift; sourceTree = "<group>"; };
+		F140B3E027A2C75F00D373B1 /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
+		F140B3E227A2C77200D373B1 /* CarListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRouter.swift; sourceTree = "<group>"; };
+		F140B3E427A2C78500D373B1 /* CarListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListModels.swift; sourceTree = "<group>"; };
+		F140B3E727A4273900D373B1 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
+		F140B3EA27A427D000D373B1 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		F140B3EE27A631DE00D373B1 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		F140B3F027A631E900D373B1 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F10CE8AA27A75A1D00F1E74B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F10CE8AB27A75A4E00F1E74B /* Guidomia.xcdatamodeld */,
+				F10CE8AE27A75D0C00F1E74B /* CoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		F140B38C27A2282D00D373B1 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +134,14 @@
 		F140B39727A2282D00D373B1 /* Guidomia */ = {
 			isa = PBXGroup;
 			children = (
-				F140B39827A2282D00D373B1 /* AppDelegate.swift */,
+				F140B3DA27A2C4EF00D373B1 /* Modules */,
+				F10CE8AA27A75A1D00F1E74B /* CoreData */,
 				F140B39A27A2282D00D373B1 /* SceneDelegate.swift */,
-				F140B39C27A2282D00D373B1 /* ViewController.swift */,
-				F140B39E27A2282D00D373B1 /* Main.storyboard */,
+				F140B39827A2282D00D373B1 /* AppDelegate.swift */,
 				F140B3A427A2282F00D373B1 /* Assets.xcassets */,
+				F140B3CB27A2299C00D373B1 /* ColorAssets.xcassets */,
 				F140B3A627A2282F00D373B1 /* LaunchScreen.storyboard */,
 				F140B3A927A2282F00D373B1 /* Info.plist */,
-				F140B3A127A2282D00D373B1 /* Guidomia.xcdatamodeld */,
 			);
 			path = Guidomia;
 			sourceTree = "<group>";
@@ -128,6 +161,65 @@
 				F140B3BE27A2282F00D373B1 /* GuidomiaUITestsLaunchTests.swift */,
 			);
 			path = GuidomiaUITests;
+			sourceTree = "<group>";
+		};
+		F140B3CD27A22F2D00D373B1 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				F140B3D227A232F400D373B1 /* CarTableViewCell.swift */,
+				F140B3D327A232F400D373B1 /* CarTableViewCell.xib */,
+				F140B3EE27A631DE00D373B1 /* HeaderTableViewCell.swift */,
+				F140B3F027A631E900D373B1 /* HeaderTableViewCell.xib */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		F140B3DA27A2C4EF00D373B1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F140B3DB27A2C4F600D373B1 /* CarListView */,
+				F140B3E627A4271600D373B1 /* Resources */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F140B3DB27A2C4F600D373B1 /* CarListView */ = {
+			isa = PBXGroup;
+			children = (
+				F140B3E927A427BB00D373B1 /* ServiceManager */,
+				F140B39C27A2282D00D373B1 /* CarListViewController.swift */,
+				F140B3DE27A2C74B00D373B1 /* CarListInteractor.swift */,
+				F140B3E027A2C75F00D373B1 /* CarListPresenter.swift */,
+				F140B3E227A2C77200D373B1 /* CarListRouter.swift */,
+				F140B3E427A2C78500D373B1 /* CarListModels.swift */,
+				F140B3DC27A2C50E00D373B1 /* Storyboard */,
+				F140B3CD27A22F2D00D373B1 /* CustomCells */,
+			);
+			path = CarListView;
+			sourceTree = "<group>";
+		};
+		F140B3DC27A2C50E00D373B1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F140B39E27A2282D00D373B1 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F140B3E627A4271600D373B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F140B3E727A4273900D373B1 /* car_list.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F140B3E927A427BB00D373B1 /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				F140B3EA27A427D000D373B1 /* ServiceManager.swift */,
+			);
+			path = ServiceManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +326,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F140B3D527A232F400D373B1 /* CarTableViewCell.xib in Resources */,
+				F140B3E827A4273900D373B1 /* car_list.json in Resources */,
 				F140B3A827A2282F00D373B1 /* LaunchScreen.storyboard in Resources */,
 				F140B3A527A2282F00D373B1 /* Assets.xcassets in Resources */,
+				F140B3F127A631E900D373B1 /* HeaderTableViewCell.xib in Resources */,
+				F140B3CC27A2299C00D373B1 /* ColorAssets.xcassets in Resources */,
 				F140B3A027A2282D00D373B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,9 +357,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F140B3A327A2282D00D373B1 /* Guidomia.xcdatamodeld in Sources */,
-				F140B39D27A2282D00D373B1 /* ViewController.swift in Sources */,
+				F10CE8AF27A75D0C00F1E74B /* CoreData.swift in Sources */,
+				F140B3EB27A427D000D373B1 /* ServiceManager.swift in Sources */,
+				F140B3EF27A631DF00D373B1 /* HeaderTableViewCell.swift in Sources */,
+				F10CE8B327A7739000F1E74B /* Guidomia.xcdatamodeld in Sources */,
+				F140B3D427A232F400D373B1 /* CarTableViewCell.swift in Sources */,
+				F140B3E527A2C78500D373B1 /* CarListModels.swift in Sources */,
+				F140B3E127A2C75F00D373B1 /* CarListPresenter.swift in Sources */,
+				F140B39D27A2282D00D373B1 /* CarListViewController.swift in Sources */,
 				F140B39927A2282D00D373B1 /* AppDelegate.swift in Sources */,
+				F140B3E327A2C77200D373B1 /* CarListRouter.swift in Sources */,
+				F140B3DF27A2C74B00D373B1 /* CarListInteractor.swift in Sources */,
 				F140B39B27A2282D00D373B1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,12 +714,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F140B3A127A2282D00D373B1 /* Guidomia.xcdatamodeld */ = {
+		F10CE8AB27A75A4E00F1E74B /* Guidomia.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F140B3A227A2282D00D373B1 /* Guidomia.xcdatamodel */,
+				F10CE8AC27A75A4E00F1E74B /* Guidomia.xcdatamodel */,
 			);
-			currentVersion = F140B3A227A2282D00D373B1 /* Guidomia.xcdatamodel */;
+			currentVersion = F10CE8AC27A75A4E00F1E74B /* Guidomia.xcdatamodel */;
 			path = Guidomia.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
